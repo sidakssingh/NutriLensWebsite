@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="256" cy="256" r="240" fill="#32CD32" opacity="0.1"/>
+    
+    <!-- Tree Trunk -->
+    <path d="M240 320L272 320L260 400L252 400L240 320Z" fill="#8B4513"/>
+    
+    <!-- Tree Body - Three Triangles for a More Natural Look -->
+    <path d="M256 80L320 320L192 320L256 80Z" fill="#32CD32"/>
+    <path d="M256 120L304 320L208 320L256 120Z" fill="#32CD32" opacity="0.8"/>
+    <path d="M256 160L288 320L224 320L256 160Z" fill="#32CD32" opacity="0.6"/>
+    
+    <!-- Camera Lens -->
+    <circle cx="256" cy="256" r="60" stroke="#32CD32" stroke-width="12" fill="none"/>
+    <circle cx="256" cy="256" r="30" fill="#32CD32"/>
+</svg> 
