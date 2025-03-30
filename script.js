@@ -1,4 +1,4 @@
-// Smooth scrolling for navigation links
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -12,7 +12,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar scroll effect with color change
+
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
 
@@ -30,7 +30,7 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Enhanced Intersection Observer for staggered animations
+
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -46,7 +46,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all sections and feature cards
+
 document.querySelectorAll('section, .feature-card').forEach((element, index) => {
     element.style.opacity = '0';
     element.style.transform = 'translateY(20px)';
@@ -54,7 +54,7 @@ document.querySelectorAll('section, .feature-card').forEach((element, index) => 
     observer.observe(element);
 });
 
-// Enhanced button hover effect with ripple
+
 document.querySelectorAll('.primary-btn, .secondary-btn').forEach(button => {
     button.addEventListener('mouseenter', () => {
         button.style.transform = 'translateY(-2px)';
@@ -64,7 +64,7 @@ document.querySelectorAll('.primary-btn, .secondary-btn').forEach(button => {
         button.style.transform = 'translateY(0)';
     });
 
-    // Add ripple effect on click
+
     button.addEventListener('click', function(e) {
         const ripple = document.createElement('span');
         ripple.classList.add('ripple');
@@ -84,14 +84,14 @@ document.querySelectorAll('.primary-btn, .secondary-btn').forEach(button => {
     });
 });
 
-// Add parallax effect to hero section
+
 const hero = document.querySelector('.hero');
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
 });
 
-// Add hover effect to feature icons
+
 document.querySelectorAll('.feature-icon').forEach(icon => {
     icon.addEventListener('mouseenter', () => {
         icon.style.transform = 'scale(1.2) rotate(5deg)';
@@ -102,7 +102,7 @@ document.querySelectorAll('.feature-icon').forEach(icon => {
     });
 });
 
-// Add counter animation to stats
+
 const stats = document.querySelectorAll('.stat h3');
 const animateValue = (element, start, end, duration) => {
     let startTimestamp = null;
@@ -140,31 +140,65 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');
     
-    // Show first slide
+
     slides[0].classList.add('active');
     
     function showSlide(n) {
-        // Remove active class from current slide and dot
+
         slides[currentSlide].classList.remove('active');
         dots[currentSlide].classList.remove('active');
         
-        // Update current slide index
+
         currentSlide = (n + slides.length) % slides.length;
         
-        // Add active class to new slide and dot
+
         slides[currentSlide].classList.add('active');
         dots[currentSlide].classList.add('active');
     }
     
-    // Event listeners for next/prev buttons
+ 
     nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
     prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
     
-    // Event listeners for dots
+
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => showSlide(index));
     });
     
-    // Auto advance slides every 3 seconds
+
     setInterval(() => showSlide(currentSlide + 1), 3000);
+});
+
+
+const modal = document.getElementById('videoModal');
+const videoBtn = document.getElementById('videoBtn');
+const closeBtn = document.querySelector('.close-modal');
+const videoIframe = document.querySelector('.video-container iframe');
+
+function openModal() {
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+
+    const videoSrc = videoIframe.src;
+    videoIframe.src = '';
+    videoIframe.src = videoSrc;
+}
+
+
+videoBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+});
+
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) {
+        closeModal();
+    }
 }); 
