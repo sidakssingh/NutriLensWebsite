@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Background Circle -->
-    <circle cx="256" cy="256" r="240" fill="#32CD32" opacity="0.1"/>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background circle -->
+    <circle cx="256" cy="256" r="256" fill="#E8F5E9"/>
     
-    <!-- Tree Trunk -->
-    <path d="M240 320L272 320L260 400L252 400L240 320Z" fill="#8B4513"/>
+    <!-- Fridge body -->
+    <rect x="156" y="96" width="200" height="320" rx="20" fill="#32CD32"/>
     
-    <!-- Tree Body - Three Triangles for a More Natural Look -->
-    <path d="M256 80L320 320L192 320L256 80Z" fill="#32CD32"/>
-    <path d="M256 120L304 320L208 320L256 120Z" fill="#32CD32" opacity="0.8"/>
-    <path d="M256 160L288 320L224 320L256 160Z" fill="#32CD32" opacity="0.6"/>
+    <!-- Fridge door lines -->
+    <rect x="156" y="96" width="200" height="320" rx="20" fill="none" stroke="#ffffff" stroke-width="8"/>
+    <line x1="156" y1="220" x2="356" y2="220" stroke="#ffffff" stroke-width="8"/>
     
-    <!-- Camera Lens -->
-    <circle cx="256" cy="256" r="60" stroke="#32CD32" stroke-width="12" fill="none"/>
-    <circle cx="256" cy="256" r="30" fill="#32CD32"/>
+    <!-- Door handle -->
+    <rect x="316" y="120" width="12" height="60" rx="6" fill="#ffffff"/>
+    <rect x="316" y="260" width="12" height="120" rx="6" fill="#ffffff"/>
+    
+    <!-- Camera lens effect -->
+    <circle cx="256" cy="256" r="40" fill="#ffffff" opacity="0.2"/>
+    <circle cx="256" cy="256" r="30" fill="#ffffff" opacity="0.3"/>
 </svg> 
